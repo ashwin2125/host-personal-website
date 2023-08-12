@@ -34,18 +34,33 @@ export default function Home() {
         <NavigationBar />
       </header>
       <main>
-        <div className='h1'>Hi, I'm Ashwin 👋</div>
+        <div className='h1'>Links 🖇️</div>
         <p className='p1'>
-          A software solutions architect who builds in <strong>Go Programming + AWS</strong> Stack.
-          <br /> <br />
-          I specialize in building services that run on <strong><a href="https://www.youtube.com/watch?v=STKCRSUsyP0" target="_blank" rel="noreferrer">Event-driven Architecture</a></strong> using <strong><a href="https://www.youtube.com/watch?v=XWTrcBqXi6s" target="_blank" rel="noreferrer">CQRS</a> & <a href="https://www.youtube.com/watch?v=_g6DA9WM7RE" target="_blank" rel="noreferrer">Microservices</a></strong>.<br /><br />
-          Away from the code, my soul resonates with anything that relates to Tamil, the pulse of technology, global history, science and economics. I love spending quality time in the shared-responsibility model I call, 'my family' and I occasionally engage in my traditional occupation - farming. This blend of tech and tradition leads my shape of life between the bytes on my screen and the soil under my feet.
+         <strong>I am currently reading these books:</strong> <br/> <br/>
+
+         Personal:
+         <ul>
+         <li>
+            <a href="https://amzn.eu/d/gIwKHpn" target="_blank" rel="noreferrer">IKIGAI</a> - an international bestseller on the people who I admire the most.
+          </li>
+          <li>
+            <a href="https://amzn.eu/d/0alV3mj" target="_blank" rel="noreferrer">Rich Dad Poor Dad</a> - most recommended book to me by fellow peers.
+          </li>
+          <li>
+            <a href="https://amzn.eu/d/d2xwmrt" target="_blank" rel="noreferrer">The Bee, the Beetle and the Money Bug</a> - the Bankbazaar founder's guide to the personal finance.
+          </li>
+          </ul>
+          Professional:
+          <ul>
+          <li>
+            <a href="https://www.amazon.in/dp/1492077216?ref_=cm_sw_r_cp_ud_dp_6Z2X9HW06W3REZV4FDZX" target="_blank" rel="noreferrer">Learning Go - Jon Bodner</a> - perfect start to learning fundamentals of go in an idiomatic way.
+          </li>
+          <li>
+            <a href="https://amzn.eu/d/eDsRuWj" target="_blank" rel="noreferrer">Learn Data Structures and Algorithms with Golang</a> - to up my go + ds skills.
+          </li>
+         </ul>
         </p>
-        <p className='p2'>
-          You can connect with me on: {' '}
-          <a href="https://wwww.linkedin.com/in/ashwin2125" target="_blank" rel="noreferrer">LinkedIn</a> | {' '}
-          <a href="https://www.x.com/ashwin2125" target="_blank" rel="noreferrer">Twitter (𝕏)</a>
-        </p>
+        <br />
         <p className='p3'>
           In the meantime, feel free to checkout my {' '}
           <a href="https://hashnode.com/@ashwin2125" target="_blank" rel="noreferrer">blogs</a>, {' '}
