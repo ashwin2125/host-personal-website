@@ -1,29 +1,6 @@
-import Link from 'next/link';
-import { useTheme } from '@components/theme'
-import { useRouter } from 'next/router';
 import Head from 'next/head';
-
-const NavigationItem = ({ path, label }) => {
-  const router = useRouter();
-  return (
-    <li>
-      <Link href={path}>
-        <a className={router.pathname === path ? 'active' : ''}>{label}</a>
-      </Link>
-    </li>
-  );
-};
-
-const NavigationBar = () => (
-  <nav>
-    <ul>
-      <NavigationItem path="/" label="home" />
-      <NavigationItem path="/projects" label="projects" />
-      <NavigationItem path="/links" label="links" />
-      <li><a href="https://www.rsm.io/ashwingopalsamy" target="_blank" rel="noopener noreferrer" className="resume-link">resume<span className="arrow"></span></a></li>
-    </ul>
-  </nav>
-);
+import { useTheme } from '@components/theme'
+import NavigationBar from '@components/NavigationBar';
 
 export default function Home() {
   useTheme();
@@ -40,7 +17,7 @@ export default function Home() {
       </header>
       <main>
       <div className='main-inner'>
-        <div className='h1'>Projects 💻</div>
+        <div className='h1'>Projects 💡</div>
         <p className='p1'>
          <strong>Few of my open-source projects that I find worth sharing here:</strong>
          <ul>

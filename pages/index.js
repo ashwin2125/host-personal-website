@@ -1,29 +1,6 @@
-import Link from 'next/link';
-import { useTheme } from '@components/theme'
-import { useRouter } from 'next/router';
 import Head from 'next/head';
-
-const NavigationItem = ({ path, label }) => {
-  const router = useRouter();
-  return (
-    <li>
-      <Link href={path}>
-        <a className={router.pathname === path ? 'active' : ''}>{label}</a>
-      </Link>
-    </li>
-  );
-};
-
-const NavigationBar = () => (
-  <nav>
-    <ul>
-      <NavigationItem path="/" label="home" />
-      <NavigationItem path="/projects" label="projects" />
-      <NavigationItem path="/links" label="links" />
-      <li><a href="https://www.rsm.io/ashwingopalsamy" target="_blank" rel="noopener noreferrer" className="resume-link">resume<span className="arrow"></span></a></li>
-    </ul>
-  </nav>
-);
+import { useTheme } from '@components/theme'
+import NavigationBar from '@components/NavigationBar';
 
 export default function Home() {
   useTheme();
@@ -44,7 +21,7 @@ export default function Home() {
         <p className='p1'>
           A software solutions architect who builds in <strong>Go Programming + AWS</strong> Stack.
           <br /> <br />
-          I specialize in building services that run on <strong><a href="https://www.youtube.com/watch?v=STKCRSUsyP0" target="_blank" rel="noreferrer">Event-driven Architecture</a></strong> using <strong><a href="https://www.youtube.com/watch?v=XWTrcBqXi6s" target="_blank" rel="noreferrer">CQRS</a> & <a href="https://www.youtube.com/watch?v=_g6DA9WM7RE" target="_blank" rel="noreferrer">Microservices</a></strong>.<br /><br />
+          I specialize in building services that run on <strong><a href="https://www.youtube.com/watch?v=STKCRSUsyP0" target="_blank" rel="noreferrer">Event-driven Architecture</a></strong> using <strong><a href="https://www.youtube.com/watch?v=XWTrcBqXi6s" target="_blank" rel="noreferrer">CQRS</a></strong> & <strong><a href="https://www.youtube.com/watch?v=_g6DA9WM7RE" target="_blank" rel="noreferrer">Microservices</a></strong>.<br /><br />
           Away from the code, my soul resonates with anything that relates to Tamil, the pulse of technology, global history, science and economics. I love spending quality time in the shared-responsibility model I call, 'my family' and I occasionally engage in my traditional occupation - farming. This blend of tech and tradition leads my shape of life between the bytes on my screen and the soil under my feet.
         </p>
         <p className='p2'>
