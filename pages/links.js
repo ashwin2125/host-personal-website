@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useTheme } from '@components/theme'
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 const NavigationItem = ({ path, label }) => {
   const router = useRouter();
@@ -27,13 +28,18 @@ const NavigationBar = () => (
 export default function Home() {
   useTheme();
   return (
-    <div className="container">
+    <>
+      <Head>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet"></link>
+      </Head>
+      <div className="container">
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"></link>
       <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;display=swap" rel="stylesheet"></link>
       <header>
         <NavigationBar />
       </header>
       <main>
+     <div className='main-inner'>
         <div className='h1'>Links 🖇️</div>
         <p className='p1'>
          <strong>I am currently reading these books:</strong> <br/> <br/>
@@ -67,7 +73,9 @@ export default function Home() {
           <a href="https://leetcode.com/ashwin2125/" target="_blank" rel="noreferrer">leetcode</a> and {' '}
           <a href="https://stackoverflow.com/users/12538720/ashwin2125" target="_blank" rel="noreferrer">stack-overflow</a>
         </p>
+        </div>
       </main>
     </div>
+    </>
   );
 }
