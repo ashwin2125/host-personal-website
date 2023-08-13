@@ -6,35 +6,34 @@
   --active-text-color: #000;
   --header-background-color: #ffffff;
   --header-border-color: #eee;
-  --nav-other-text-color:#8c8c8c;
+  --nav-other-text-color: #8c8c8c;
 }
 
 [data-theme='dark'] {
+  --active-text-color: #ffffff;
   --background-color: rgb(11, 21, 36);
   --text-color: #ffffff;
-  --link-color: #3e8bff; /* Adjust as needed for dark theme */
-  --subtle-text-color: #e6e6e6; /* Adjust as needed for dark theme */
-  --active-text-color: #ffffff;
-  --header-background-color:  rgb(11, 21, 36); /* Adjust as needed for dark theme */
-  --header-border-color: rgb(27, 37, 49); /* Adjust as needed for dark theme */
-  --nav-other-text-color:#808080;
+  --link-color: #3e8bff;
+  --subtle-text-color: #e6e6e6;
+  --header-background-color: rgb(11, 21, 36);
+  --header-border-color: rgb(27, 37, 49);
+  --nav-other-text-color: #808080;
 }
 
 html, body {
   padding: 0;
   margin: 0;
-  background-color: var(--background-color); /* Use the variable */
+  background-color: var(--background-color);
   scroll-behavior: smooth;
 }
 
-* {
+*, *::before, *::after {
   font-family: 'Inter','SF Pro Display', 'Helvetica Neue', 'Roboto', sans-serif;
   box-sizing: border-box;
 }
 
 .container {
   max-width: 100%;
-  padding: 0;
   margin: 0 auto;
   height: 100vh;
   display: flex;
@@ -44,63 +43,58 @@ html, body {
   font-size: 20px;
   font-weight: 300;
   letter-spacing: -.01em;
-  text-align: justify; /* Added this line to justify the text */
-  letter-spacing: 0.012em
+  text-align: justify;
+  letter-spacing: 0.012em;
 }
 
 main {
   padding: 3.1% 1rem;
-  max-width: 1020px; /* or any other value that fits your design */
-  margin: 0 auto; /* center the content */
+  max-width: 1020px;
+  margin: 0 auto;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding-top: 0.5rem;
-  padding-bottom: 0rem;
   line-height: 1.625;
 }
 
-.h1{
-  font-weight: 500;
-  font-size: 3.7rem;
+.main-inner {
+  padding: 1rem; /* Inner padding for the box */
+  background: var(--background-color); /* Background color of the box */
+  border-radius: 5px; /* Rounded corners */
+  overflow-wrap: break-word; /* Breaks long words */
+  word-wrap: break-word; /* Similar to above for wider browser support */
+}
+
+.h1, .h2, .p1, .p2, .p3 {
   color: var(--text-color);
 }
 
-.h2{
+.h1 {
+  font-weight: 500;
+  font-size: 3.7rem;
+}
+
+.h2 {
   font-weight: 500;
   font-size: 2.0rem;
   padding-top: 0.5rem;
-  padding-bottom: 0rem;
-  line-height: 1.625;
-  color: var(--text-color);
 }
 
 a {
   font-weight: 300;
   text-decoration: underline;
-  color: var(--link-color); /* Use the variable */
+  color: var(--link-color);
 }
 
 strong {
   font-weight: 400;
-
-}
-
-.p1 {
-  color: var(--text-color);
-}
-
-.p2 {
-  color: var(--text-color);
 }
 
 .p3 {
-  color: var(--text-color);
-  margin-top: -10px; /* adjust this value according to your needs */
+  margin-top: -10px;
 }
-
 
 header {
   width: 100%;
@@ -108,12 +102,11 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 0;
-  box-shadow: none;
-  margin: 0;
-  backdrop-filter: none;
-  background: var(--header-background-color); /* Use the variable */
-  border-bottom: 1px solid var(--header-border-color); /* Use the variable */
+  background: var(--header-background-color);
+  border-bottom: 1px solid var(--header-border-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 nav ul {
@@ -133,73 +126,69 @@ nav a {
   font-weight: 400;
   letter-spacing: -.01em;
   transition: color 0.3s ease;
-  font-family: 'SF Pro Text','SF Pro Icons', 'Helvetica Neue', 'Inter', sans-serif;
 }
 
-nav a:hover {
-  color: var(--subtle-text-color); /* Use the variable */
+nav a:hover{
+  color: var(--subtle-text-color);
+}
+
+.resume-link:hover, nav a.resume-link:hover {
+  color: var(--link-color);
 }
 
 nav a.active {
   font-weight: 500;
-  color: var(--active-text-color); /* Use the variable */
+  color: var(--active-text-color);
 }
-
-
 
 .resume-link {
   position: relative;
 }
 
 .resume-link .arrow::after {
-  content: '→'; /* Unicode right arrow */
-  opacity: 0; /* Make it invisible when not hovered */
-  transition: opacity 0.3s ease; /* Transition effect */
-  margin-left: 4px; /* Optional: Add some space between the text and the arrow */
+  content: '→';
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  margin-left: 4px;
 }
 
 .resume-link:hover .arrow::after {
-  opacity: 1; /* Make it visible when hovered */
+  opacity: 1;
 }
-
-.resume-link:hover {
-  color: var(--link-color); /* Color when hovering over the "resume" link */
-}
-
-nav a.resume-link:hover {
-  color: var(--link-color); /* Change to blue color when hovering over the "resume" link */
-}
-
-
-
-/* Existing Styles... */
 
 @media (max-width: 768px) {
-  /* Adjust Container Layout for Mobile */
   .container {
-    font-size: 18px;
+    font-size: 12px; 
   }
 
-  /* Adjust Header Layout for Mobile */
-  header {
-    padding: 0.5rem 1rem;
-  }
-
-  /* Adjust Navigation for Mobile */
   nav ul {
-    flex-wrap: nowrap; /* Keep items in a single line */
-    overflow-x: auto; /* Allow scrolling if the content overflows */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .h1 {
+    font-size: 1.5rem; /* Adjust the font size for the h1 class */
+  }
+
+  .h2 {
+    font-size: 0.7rem; /* Adjust the font size for the h2 class */
   }
 
   nav a {
-    font-size: 14px; /* Reduce font size */
-    padding: 0.25rem 0.4rem; /* Adjust padding */
+    font-size: 12px; /* Adjust the font size for the navigation links */
   }
 
-  /* Adjust Font Size for Mobile */
-  .h1 {
-    font-size: 2.5rem;
+  main {
+    padding: 1rem; /* Adjusting outer padding for main */
   }
 
-  /* Add any other specific styling for mobile view here */
+  .main-inner {
+    padding: 0.5rem; /* You can adjust this value based on your needs */
+    max-width: 100%; /* Ensures that the container fits within the screen bounds */
+    margin: 0 auto; 
+  }
+
+  header {
+    padding: 0.5rem 0.5rem; /* Adjust the header padding for smaller screens */
+  }
 }
